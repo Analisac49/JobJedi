@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Job Application List</h1>
+
+  {% if job_applications %}
+    <ul>
+      {% for application in job_applications %}
+        <li><a href="{% url 'job_application_detail' pk=application.pk %}">{{ application.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No job applications available.</p>
+  {% endif %}
+{% endblock %}

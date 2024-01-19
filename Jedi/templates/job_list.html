@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application List</title>
+</head>
+<body>
+    <h1>Job Application List</h1>
+    <ul>
+        {% for application in applications %}
+            <li>
+                <a href="{% url 'job_application_detail' pk=application.pk %}">{{ application.position }} at {{ application.company }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
