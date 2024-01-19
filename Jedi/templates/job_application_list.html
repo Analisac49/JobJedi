@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-  <h1>Job Application List</h1>
+    <h1>Job Application List</h1>
 
-  {% if job_applications %}
-    <ul>
-      {% for application in job_applications %}
-        <li><a href="{% url 'job_application_detail' pk=application.pk %}">{{ application.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No job applications available.</p>
-  {% endif %}
+    {% if applications %}
+        <ul>
+            {% for application in applications %}
+                <li><a href="{% url 'job_application_detail' pk=application.pk %}">{{ application.position }} at {{ application.company }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No job applications available.</p>
+    {% endif %}
 {% endblock %}

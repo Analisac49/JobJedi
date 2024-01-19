@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+}
+
+#job-application-list {
+    margin: 20px;
+}
+
+.application-link {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#job-application-detail {
+    margin: 20px;
+}
+
+#new-job-application-form {
+    margin: 20px;
+}
+
+#new-job-application-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-job-application-form label {
+    margin-bottom: 5px;
+}
+
+#new-job-application-form input,
+#new-job-application-form select {
+    margin-bottom: 10px;
+}
+
+#new-job-application-form button {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}

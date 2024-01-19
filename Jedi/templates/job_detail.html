@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Application Detail</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>Job Application Detail</h1>
+
     <p>Position: {{ application.position }}</p>
     <p>Company: {{ application.company }}</p>
     <p>Date Applied: {{ application.date_applied }}</p>
     <p>Status: {{ application.status }}</p>
-</body>
-</html>
+    <p>Job Description: {{ application.job_description }}</p>
+    <p>Notes: {{ application.notes }}</p>
+{% endblock %}
