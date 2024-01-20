@@ -5,12 +5,28 @@
     <h1>Job Application List</h1>
 
     {% if applications %}
-        <ul>
-            {% for application in applications %}
-                <li><a href="{% url 'job_application_detail' pk=application.pk %}">{{ application.position }} at {{ application.company }}</a></li>
-            {% endfor %}
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Company</th>
+                    <th>Date Applied</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in applications %}
+                    <tr>
+                        <td>{{ application.position }}</td>
+                        <td>{{ application.company }}</td>
+                        <td>{{ application.date_applied }}</td>
+                        <td><a href="{% url 'job_application_detail' pk=application.pk %}">View Details</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     {% else %}
         <p>No job applications available.</p>
     {% endif %}
+
+    <a href="{% url 'new_job_application' %}">New Application</a>
 {% endblock %}

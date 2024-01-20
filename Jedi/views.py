@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import JobApplication
 from .forms import JobApplicationForm
 
+def home(request):
+    applications = JobApplication.objects.all()
+    return render(request, 'job_application_list.html', {'applications': applications})
+
 def job_application_list(request):
     applications = JobApplication.objects.all()
     return render(request, 'job_application_list.html', {'applications': applications})
