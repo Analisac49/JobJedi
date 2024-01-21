@@ -1,5 +1,12 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.contrib.auth import get_user_model
+
+class JobApplication(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    position = models.CharField(max_length=255)
+    company = models.CharField(max_length=255)
+    date_applied = models.DateField()
 
 class CustomUser(AbstractUser):
 
@@ -22,4 +29,3 @@ class CustomUser(AbstractUser):
         related_name='customuser_set',
         related_query_name='user',
     )
-
