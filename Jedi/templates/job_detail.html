@@ -5,8 +5,11 @@
 
     <p>Position: {{ application.position }}</p>
     <p>Company: {{ application.company }}</p>
-    <p>Date Applied: {{ application.date_applied }}</p>
+    <p>Date Applied: {{ application.date_applied|date:"F d, Y" }}</p>
     <p>Status: {{ application.status }}</p>
     <p>Job Description: {{ application.job_description }}</p>
     <p>Notes: {{ application.notes }}</p>
+
+    <a href="{% url 'edit_job' job_application_id=application.id %}">Edit</a>
+    <a href="{% url 'delete_job' job_application_id=application.id %}" onclick="return confirm('Are you sure you want to delete this job application?')">Delete</a>
 {% endblock %}

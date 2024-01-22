@@ -1,9 +1,16 @@
+<!-- Jedi/templates/job_list.html -->
+
 {% extends 'base.html' %}
+
 {% block content %}
     <h1>Job Application List</h1>
     <ul>
         {% for application in applications %}
-            <li><a href="{% url 'job_application_detail' pk=application.pk %}">{{ application.position }} at {{ application.company }}</a></li>
+            <li>
+                <a href="{% url 'job_application_detail' pk=application.pk %}">{{ application.position }} at {{ application.company }}</a>
+                <a href="{% url 'edit_job' job_application_id=application.id %}">Edit</a>
+                <a href="{% url 'delete_job' job_application_id=application.id %}" onclick="return confirm('Are you sure you want to delete this job application?')">Delete</a>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
