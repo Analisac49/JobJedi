@@ -13,6 +13,38 @@ h2 {
     color: #16474e;
 }
 
+p {
+    color: #084751;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th:nth-child(1), td:nth-child(1) { /* Position */
+    color: #064317;
+}
+
+th:nth-child(2), td:nth-child(2) { /* Company */
+    color: #236d0d;
+}
+
+th:nth-child(3), td:nth-child(3) { /* Date Applied */
+    color: #0f3d79;
+}
+
+/* Hover effect for the rows */
+tr:hover {
+    background-color: #f5f5f5;
+}
+
 #job-application-list {
     margin: 20px;
 }
@@ -52,4 +84,24 @@ h2 {
     color: #fff;
     padding: 10px;
     cursor: pointer;
+}
+
+a {
+    color: #074619;
+    text-decoration: underline;
+}
+
+/* CSS for visited links */
+a:visited {
+    color: #4e0c6f;
+}
+
+/* CSS for links on hover */
+a:hover {
+    color: #0a3f5b;
+}
+
+/* CSS for active links (clicked) */
+a:active {
+    color: #00ffb7;
 }
