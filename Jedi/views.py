@@ -1,7 +1,8 @@
+from django.contrib.auth import logout
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import JobApplication
 from .forms import JobApplicationForm, NotesForm
-from django.contrib.auth.decorators import login_required
 
 @login_required
 def home(request):
@@ -15,7 +16,7 @@ def job_application_list(request):
 
 @login_required
 def job_application_detail(request, pk):
-    application = get_object_or_404(JobApplication, pk=pk)
+    application = get_object_or_404(JobApplication, pk=pk, user=request.user)
     return render(request, 'job_detail.html', {'application': application})
 
 @login_required
@@ -82,3 +83,8 @@ def notes_view(request, job_application_id):
             return redirect('job_application_detail', pk=job_application_id)
 
     return render(request, 'edit_notes.html', {'application': application, 'form': form})
+
+@login_required
+def logout_view(request):
+    logout(request)
+    return redirect('home')
