@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import JobApplication
-from .forms import JobApplicationForm
+from .forms import JobApplicationForm, NotesForm
 
 def home(request):
     applications = JobApplication.objects.all()
@@ -32,11 +32,11 @@ def edit_job(request, job_application_id):
         form = JobApplicationForm(request.POST, instance=job_application)
         if form.is_valid():
             form.save()
-            return redirect('job_application_list')
+            return redirect('job_application_detail', pk=job_application_id)
     else:
         form = JobApplicationForm(instance=job_application)
 
-    return render(request, 'edit_job.html', {'form': form})
+    return render(request, 'edit_job.html', {'form': form, 'job_application': job_application})
 
 def delete_job(request, job_application_id):
     job_application = get_object_or_404(JobApplication, id=job_application_id)
@@ -46,3 +46,28 @@ def delete_job(request, job_application_id):
         return redirect('job_application_list')
 
     return render(request, 'delete_job.html', {'job_application': job_application})
+
+def edit_notes(request, job_application_id):
+    application = get_object_or_404(JobApplication, id=job_application_id)
+
+    if request.method == 'POST':
+        form = NotesForm(request.POST, instance=application)
+        if form.is_valid():
+            form.save()
+            return redirect('job_application_detail', pk=job_application_id)
+    else:
+        form = NotesForm(instance=application)
+
+    return render(request, 'edit_notes.html', {'application': application, 'form': form})
+
+def notes_view(request, job_application_id):
+    application = get_object_or_404(JobApplication, id=job_application_id)
+    form = NotesForm(instance=application)
+
+    if request.method == 'POST':
+        form = NotesForm(request.POST, instance=application)
+        if form.is_valid():
+            form.save()
+            return redirect('job_application_detail', pk=job_application_id)
+
+    return render(request, 'edit_notes.html', {'application': application, 'form': form})
