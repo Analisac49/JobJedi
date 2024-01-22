@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Notes for {{ application.position }}</h1>
+
+    <p><strong>Position:</strong> {{ application.position }}</p>
+    <p><strong>Company:</strong> {{ application.company }}</p>
+    <p><strong>Notes:</strong> {{ application.notes }}</p>
+
+    <a href="{% url 'job_application_detail' pk=application.id %}">Back to Details</a>
+{% endblock %}

@@ -31,6 +31,20 @@ This Job Application Tracker is a simple web application designed to help job se
 
 1. **Clone the Repository:**
 
-## Install Dependencies:
+2. **Install Dependencies:**
+- Navigate to the project directory:
+  ```
+  cd JobJedi
+  ```
+- Install the required dependencies using your package manager. For example, if you're using pipenv:
+  ```
+  pipenv install
+  ```
+  If you're using virtualenv and pip:
+  ```
+  pip install -r requirements.txt
+  ```
+  Make sure to replace the package manager commands based on your preferred setup.
 
-**TBD**# JobJedi
+JobJedi
+by: Analisa Chavez
