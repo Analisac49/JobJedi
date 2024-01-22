@@ -1,12 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: lightblue;
+    background-color: rgb(107, 183, 183);
     margin: 0;
     padding: 0;
 }
 
+h1 {
+    color: #16474e;
+}
+
 h2 {
-    color: #333;
+    color: #16474e;
 }
 
 #job-application-list {
@@ -15,7 +19,7 @@ h2 {
 
 .application-link {
     text-decoration: none;
-    color: #0066cc;
+    color: #3de08c;
     font-weight: bold;
     display: block;
     margin-bottom: 10px;
@@ -44,7 +48,7 @@ h2 {
 }
 
 #new-job-application-form button {
-    background-color: #0066cc;
+    background-color: #136684;
     color: #fff;
     padding: 10px;
     cursor: pointer;

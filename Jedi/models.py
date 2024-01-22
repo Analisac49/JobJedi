@@ -35,3 +35,4 @@ class Note(models.Model):
 
     def __str__(self):
         return f"Note for {self.job_application.position} ({self.job_application.user.username if self.job_application.user else 'No User'})"
+    

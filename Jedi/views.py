@@ -24,4 +24,3 @@ def new_job_application(request):
         form = JobApplicationForm()
 
     return render(request, 'new_job.html', {'form': form})
-
