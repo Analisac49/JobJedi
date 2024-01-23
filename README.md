@@ -40,10 +40,6 @@ This Job Application Tracker is a simple web application designed to help job se
   ```
   pipenv install
   ```
-  If you're using virtualenv and pip:
-  ```
-  pip install -r requirements.txt
-  ```
   Make sure to replace the package manager commands based on your preferred setup.
 
 JobJedi
