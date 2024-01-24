@@ -11,7 +11,7 @@ def home(request):
 
 @login_required
 def job_application_list(request):
-    applications = JobApplication.objects.filter(user=request.user)
+    applications = JobApplication.objects.filter(user=request.user).order_by('-date_applied')
     return render(request, 'job_application_list.html', {'applications': applications})
 
 @login_required
